@@ -7,7 +7,7 @@ Get yourself ruby 2.1. I recommend using [rvm](http://rvm.io).
 Clone source:
 
 ```bash
-g clone https://github.com/waterlink/smiled.git ~/.smiled-src
+git clone https://github.com/waterlink/smiled.git ~/.smiled-src
 ```
 
 Install dependencies using bundler:
