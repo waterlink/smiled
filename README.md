@@ -16,6 +16,8 @@ Install dependencies using bundler:
 bundle install
 ```
 
+Required system dependency is **streamer**. To install it on ubuntu just do `apt-get install streamer`
+
 ## Managing daemon
 
 ```bash
@@ -31,15 +33,20 @@ bundle install
 
 ## Setting up autostart for user
 
-for bash
+create rvm wrapper
 
 ```bash
-echo "cd ~/.smiled-src && ./smilectl.rb start >/dev/null || true" | tee -a ~/.bash_profile
+rvm wrapper `rvm current` smiled
 ```
 
-for zsh
+just add bash script to your home folder (or anywhere)
 
 ```bash
-echo "cd ~/.smiled-src && ./smilectl.rb start >/dev/null || true" | tee -a ~/.zprofile
+#!/usr/bin/env bash
+
+cd $HOME/.smiled-src && $HOME/.rvm/bin/smiled_ruby smilectl.rb start >/dev/null || true
+
 ```
+
+and add this script to your GUI autostart
 
